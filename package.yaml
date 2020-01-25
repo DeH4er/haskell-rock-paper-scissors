@@ -1,0 +1,30 @@
+name:                rock-paper-scissors
+version:             0.1.0.0
+github:              "deh4er/rock-paper-scissors"
+license:             BSD3
+author:              "Denys Lytviak"
+maintainer:          "deh4er@gmail.com"
+copyright:           "2020 Denys Lytviak"
+
+extra-source-files:
+- README.md
+
+description:         Please see the README on GitHub at <https://github.com/deh4er/rock-paper-scissors>
+
+dependencies:
+- base >= 4.7 && < 5
+- network
+
+library:
+  source-dirs: src
+
+executables:
+  concurrent-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - rock-paper-scissors
